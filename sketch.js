@@ -82,7 +82,12 @@ function addFoods(){
 function feedDog(){
   dog.addImage(dogImg1);
 
-  foodObj.updateFoodStock(foodObj.getFoodStock()-1);
+  if(foodObj.getFoodStock()<=0){
+    foodObj.getFoodStock() = 0;
+  } else{
+    foodObj.updateFoodStock(foodObj.getFoodStock()-1);
+  }
+  
   database.ref('/').update({
     food:foodObj.getFoodStock(),
     feedTime:hour()
