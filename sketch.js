@@ -72,6 +72,7 @@ function readStock(data){
 }
 
 function addFoods(){
+  dog.addImage(dogImg);
   foodS++;
   database.ref('/').update({
     food:foodS
